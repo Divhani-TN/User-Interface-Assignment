@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6245901939769096948}
   - component: {fileID: 4614691704829082423}
   - component: {fileID: 6910449692838548467}
-  - component: {fileID: 5012593734598940206}
   m_Layer: 5
   m_Name: Spot
   m_TagString: Untagged
@@ -78,35 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5012593734598940206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 194497175613740452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3239569aac4cf9540b1581ae4dd923e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SnapAreas:
-  - {fileID: 6245901939769096948}
-  - {fileID: 6245901939769096948}
-  - {fileID: 6245901939769096948}
-  - {fileID: 6245901939769096948}
-  - {fileID: 6245901939769096948}
-  - {fileID: 6245901939769096948}
-  - {fileID: 6245901939769096948}
-  - {fileID: 6245901939769096948}
-  - {fileID: 6245901939769096948}
-  - {fileID: 6245901939769096948}
-  - {fileID: 6245901939769096948}
-  - {fileID: 6245901939769096948}
-  - {fileID: 6245901939769096948}
-  - {fileID: 6245901939769096948}
-  draggableobjects: []
-  snapRange: 0.5
 --- !u!1 &3579459718162716103
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,14 +198,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 5259102698263164248, guid: bb81a1a5a696a4147a09bf3a0faacc9c, type: 3}
+        m_TargetAssemblyTypeName: ShopItems, Assembly-CSharp
+        m_MethodName: Purchase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 20
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -496,8 +466,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopManager: {fileID: 0}
+  bagManager: {fileID: 0}
   gameText: {fileID: 0}
   amount: 0
+  itemImage: {fileID: 0}
+  items: []
 --- !u!224 &8425375673958545804 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7096401242272759722, guid: 721004a97ac981d4d825565c7aebc7ed, type: 3}

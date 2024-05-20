@@ -8,20 +8,21 @@ using UnityEngine.UI;
 public class Game1 : MonoBehaviour
 {
     public GameObject Chest;
-    public GameObject Bag;
+    //public GameObject Bag;
     public Button ChestButton; // Reference to the button
-    public Button BagButton;
+    public Button ShopButton;
+    public GameObject Shoppanel;
 
     void Start()
     {
         Chest.SetActive(false);
-        Bag.SetActive(true);
+        
 
         // Add a listener to the chest button
         ChestButton.onClick.AddListener(ActivateChest);
 
         // Add a listener to the bag button
-        BagButton.onClick.AddListener(ActivateBag);
+        ShopButton.onClick.AddListener(ActivateShop);
     }
 
     // Update is called once per frame
@@ -29,7 +30,7 @@ public class Game1 : MonoBehaviour
     {
         if (Chest.activeSelf == true)
         {
-            Bag.SetActive(false);
+            Shoppanel.SetActive(false);
         }
     }
 
@@ -37,12 +38,13 @@ public class Game1 : MonoBehaviour
     void ActivateChest()
     {
         Chest.SetActive(true);
+        Shoppanel.SetActive(false);
     }
 
     // Method to activate the Bag and deactivate the Chest
-    void ActivateBag()
+    void ActivateShop()
     {
+        Shoppanel.SetActive(true);
         Chest.SetActive(false);
-        Bag.SetActive(true);
     }
 }
