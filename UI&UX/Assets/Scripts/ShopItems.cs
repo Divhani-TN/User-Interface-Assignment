@@ -10,7 +10,7 @@ public class ShopItems : MonoBehaviour
     public Text gameText; // Reference to a UI Text component
     public int amount; // The value of the item
     public Image itemImage; // Reference to the Image component of the item
-    public List<ShopItems> items = new List<ShopItems>();
+    //public List<ShopItems> items = new List<itemImages>();
     public void Purchase()
     {
         // Check if the player has enough balance to purchase the item

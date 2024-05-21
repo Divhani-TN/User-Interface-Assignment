@@ -18,6 +18,7 @@ public class BagManager : MonoBehaviour
     void Start()
     {
         BagButton.onClick.AddListener(AddSpaces);
+        shopItems = GameObject.FindGameObjectWithTag("Wahtever").GetComponent<ShopItems>();
     }
     public void AddSpaces()
     {
@@ -72,13 +73,14 @@ public class BagManager : MonoBehaviour
             {
                 // The space has an item, so sell it
                 Image itemImage = space.GetChild(0).GetComponent<Image>();
-                ShopItems item = shopItems.items.Find(i => i.itemImage == itemImage);
+              
 
-                if (item != null)
+                if (shopItems != null)
                 {
-                    int sellPrice = item.amount;
+                    int sellPrice = shopItems.amount;
 
-                    Destroy(itemImage.gameObject);
+                    //Destroy(itemImage.gameObject);
+                    Image newItem = Instantiate(itemImage, shopManager.Spot.transform);
 
                     // Increase the balance by the item's sell price
                     shopManager.IncreaseBalance(sellPrice);

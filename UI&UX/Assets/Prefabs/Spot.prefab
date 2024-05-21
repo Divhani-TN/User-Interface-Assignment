@@ -443,34 +443,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7292981312279612571, guid: 721004a97ac981d4d825565c7aebc7ed, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9104466450233286153}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 721004a97ac981d4d825565c7aebc7ed, type: 3}
---- !u!1 &8332316822803565245 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7292981312279612571, guid: 721004a97ac981d4d825565c7aebc7ed, type: 3}
-  m_PrefabInstance: {fileID: 1627921376571213350}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &9104466450233286153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8332316822803565245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f81787cdf7ae1cb4faa8f6a93e5db1c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopManager: {fileID: 0}
-  bagManager: {fileID: 0}
-  gameText: {fileID: 0}
-  amount: 0
-  itemImage: {fileID: 0}
-  items: []
 --- !u!224 &8425375673958545804 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7096401242272759722, guid: 721004a97ac981d4d825565c7aebc7ed, type: 3}

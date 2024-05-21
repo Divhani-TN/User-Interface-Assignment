@@ -8,6 +8,7 @@ public class ShopManager : MonoBehaviour
 {
     public int moneyBalance = 100;
     public Text moneyBalanceText; // Text object to display the balance
+    public GameObject Spot;
 
 
     void Start()
