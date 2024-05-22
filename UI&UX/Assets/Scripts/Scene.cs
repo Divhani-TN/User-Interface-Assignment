@@ -13,8 +13,9 @@ public class Scene : MonoBehaviour
 
     public void LoadLostScene()
     {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         // Load the "Lost" scene
-        SceneManager.LoadScene("lost");
+        SceneManager.LoadScene(currentSceneIndex);
     }
    
 }

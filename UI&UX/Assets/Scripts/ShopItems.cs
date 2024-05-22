@@ -21,7 +21,7 @@ public class ShopItems : MonoBehaviour
             gameText.text = "Purchase successful. Balance " + shopManager.moneyBalance;
 
             // Update the balance display
-            shopManager.UpdateBalanceDisplay();
+          
 
             // Instantiate the item image into the bag space
             OnPurchaseComplete();
@@ -32,11 +32,10 @@ public class ShopItems : MonoBehaviour
         }
     }
 
-    void OnPurchaseComplete()
+   public void OnPurchaseComplete()
     {
         // Instantiate the item image into the bag space
         Image newItem = Instantiate(itemImage, bagManager.spacePrefab.transform);
-       
     }
 }
 

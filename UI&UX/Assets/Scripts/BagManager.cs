@@ -9,14 +9,16 @@ public class BagManager : MonoBehaviour
     public GameObject spacePrefab;
     private int buttonPressCount = 0;
     public int price;
-
+ 
     // Reference to the ShopManager script
     public ShopManager shopManager;
     public List<GameObject> bagSpaces = new List<GameObject>();
     public ShopItems shopItems;
+    public GameObject[] Slots;
 
     void Start()
     {
+      
         BagButton.onClick.AddListener(AddSpaces);
         shopItems = GameObject.FindGameObjectWithTag("Wahtever").GetComponent<ShopItems>();
     }
@@ -66,51 +68,14 @@ public class BagManager : MonoBehaviour
     }
     public void SellItem()
     {
-        foreach (Transform space in layoutGroup.transform)
-        {
-            // Check if the space has an item
-            if (space.childCount > 0)
-            {
-                // The space has an item, so sell it
-                Image itemImage = space.GetChild(0).GetComponent<Image>();
 
-                foreach (Transform nextSpace in layoutGroup.transform)
-                {
-                    if (nextSpace.childCount == 0)
-                    {
-                        // Instantiate the next item image into the empty space
-                        Image newItem = Instantiate(itemImage, nextSpace);
-                        // Handle the instantiated item (e.g., set its properties, position, etc.)
-                        // ...
-                        return; // Stop after storing one item
-                    }
-                }
-
-
-
-                if (shopItems != null)
-                {
-                    int sellPrice = shopItems.amount;
-
-                    //Destroy(itemImage.gameObject);
-                    Image newItem = Instantiate(itemImage, shopManager.Spot.transform);
-
-
-                    // Increase the balance by the item's sell price
-                    shopManager.IncreaseBalance(sellPrice);
-                    Debug.Log("Item sold. Balance after sale: " + shopManager.moneyBalance);
-                }
-                else
-                {
-                    Debug.Log("Item not found in shop items.");
-                }
-
-                // Stop after selling one item
-                return;
-            }
-        }
-        Debug.Log("No items to sell.");
+  
     }
+    public void movetoChest()
+    {
 
+    }
+   
+    
 }
 

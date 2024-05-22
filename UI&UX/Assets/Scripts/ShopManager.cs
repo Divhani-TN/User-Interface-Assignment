@@ -10,19 +10,34 @@ public class ShopManager : MonoBehaviour
     public Text moneyBalanceText; // Text object to display the balance
     public GameObject Spot;
 
-
+    public GameObject[] Slots;
+    public ShopItems ShopItems;
     void Start()
     {
         // Initialize money balance
         moneyBalance = 100;
-        UpdateBalanceDisplay();
+       
 
     }
 
     public bool PurchaseItem(int cost)
     {
-        // Check if there is enough money to purchase the item
-        if (moneyBalance >= cost)
+        foreach (GameObject obj in Slots)
+        {
+            if (obj.transform.childCount == 0)
+            {
+                if (obj.GetComponent<Snap>().haschildren == false)
+                {
+                     // Instantiate the item image into the bag space
+        Image newItem = Instantiate(ShopItems.itemImage,ShopItems.bagManager.spacePrefab.transform);
+                    newItem.tag = "image";
+                    newItem.transform.SetParent(obj.transform);
+                    newItem.transform.position = obj.transform.position;
+                }
+            }
+        }
+            // Check if there is enough money to purchase the item
+            if (moneyBalance >= cost)
         {
             // Deduct the cost from the money balance
             moneyBalance -= cost;
@@ -41,7 +56,7 @@ public class ShopManager : MonoBehaviour
     public void ReduceBalance(int amount)
     {
         moneyBalance -= amount;
-        UpdateBalanceDisplay();
+       
     }
     public GameObject GetShopItem()
     {
@@ -75,10 +90,10 @@ public class ShopManager : MonoBehaviour
 
         // If there are items, increase the balance
         moneyBalance += amount;
-        UpdateBalanceDisplay();
+        
         Debug.Log("Balance after increase: " + moneyBalance);
     }
-    public void UpdateBalanceDisplay()
+    public void Update()
     {
         // Update the text object to display the current balance
         moneyBalanceText.text = "Balance: $" + moneyBalance.ToString();
@@ -94,6 +109,10 @@ public class ShopManager : MonoBehaviour
         }
 
 
+    }
+    public void Selling(int cost)
+    {
+        moneyBalance += cost;
     }
 }
 

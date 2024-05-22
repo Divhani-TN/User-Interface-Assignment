@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class ChestManager : MonoBehaviour
 {
 
@@ -12,7 +11,9 @@ public class ChestManager : MonoBehaviour
     private int buttonPressCount = 0;
 
     public ShopManager shopManager;
-
+    public bool hasChildren;
+   // public BagManager BagManager;
+    //public ShopItems itemimage;
     void Start()
     {
         yourButton.onClick.AddListener(AddSpaces);
@@ -45,7 +46,27 @@ public class ChestManager : MonoBehaviour
             newSpace.transform.SetParent(layoutGroup.transform, false);
         }
     }
+
+    public void CheckEmpty()
+    {
+        foreach (Transform space in layoutGroup.transform)
+        {
+            if (space.childCount > 0)
+            {
+                Debug.Log("Space taken");
+            }
+        }
+    }
+    public void Update()
+    {
+        hasChildren = transform.childCount > 0;
+    }
+    public void movebacktobag()
+    {
+
+    }
 }
 
-    
+
+
 

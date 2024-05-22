@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1607249509936027503}
   - component: {fileID: 5814200743659910870}
   - component: {fileID: 2037562424222965746}
-  - component: {fileID: 7357025544194875987}
+  - component: {fileID: 3848420979031681846}
   m_Layer: 5
   m_Name: Image
   m_TagString: ShopItem
@@ -129,7 +129,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7357025544194875987
+--- !u!114 &3848420979031681846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

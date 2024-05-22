@@ -51,6 +51,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyBalance: 100
   moneyBalanceText: {fileID: 0}
+  Spot: {fileID: 0}
+  Slots: []
+  ShopItems: {fileID: 0}
 --- !u!114 &3857300505550669023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +70,7 @@ MonoBehaviour:
   layoutGroup: {fileID: 0}
   spacePrefab: {fileID: 0}
   shopManager: {fileID: 8357201808300883736}
+  hasChildren: 0
 --- !u!114 &6909324114419598135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,12 +86,15 @@ MonoBehaviour:
   BagButton: {fileID: 0}
   layoutGroup: {fileID: 0}
   spacePrefab: {fileID: 0}
+  price: 0
   shopManager: {fileID: 8357201808300883736}
   bagSpaces:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  shopItems: {fileID: 0}
+  Slots: []
 --- !u!114 &5519958158422777666
 MonoBehaviour:
   m_ObjectHideFlags: 0
