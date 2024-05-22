@@ -36,6 +36,7 @@ public class ShopItems : MonoBehaviour
     {
         // Instantiate the item image into the bag space
         Image newItem = Instantiate(itemImage, bagManager.spacePrefab.transform);
+       
     }
 }
 

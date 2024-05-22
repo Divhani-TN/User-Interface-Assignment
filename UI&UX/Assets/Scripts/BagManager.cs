@@ -73,7 +73,20 @@ public class BagManager : MonoBehaviour
             {
                 // The space has an item, so sell it
                 Image itemImage = space.GetChild(0).GetComponent<Image>();
-              
+
+                foreach (Transform nextSpace in layoutGroup.transform)
+                {
+                    if (nextSpace.childCount == 0)
+                    {
+                        // Instantiate the next item image into the empty space
+                        Image newItem = Instantiate(itemImage, nextSpace);
+                        // Handle the instantiated item (e.g., set its properties, position, etc.)
+                        // ...
+                        return; // Stop after storing one item
+                    }
+                }
+
+
 
                 if (shopItems != null)
                 {
@@ -81,6 +94,7 @@ public class BagManager : MonoBehaviour
 
                     //Destroy(itemImage.gameObject);
                     Image newItem = Instantiate(itemImage, shopManager.Spot.transform);
+
 
                     // Increase the balance by the item's sell price
                     shopManager.IncreaseBalance(sellPrice);
